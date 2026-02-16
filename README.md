@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 Make sure you run 
 `npm install`
@@ -14,21 +12,29 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# My Course Platform
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This is a Next.js + TypeScript + MUI + framer motion templated web application for browsing and learning courses.
 
-## Learn More
+## Available Pages
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Courses Page
+- **Route:** `/courses`
+- **Description:** Lists all available courses.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Single Course Page
+- **Route:** `/courses/[slug]`
+- **Description:** Displays a single course with its chapters and lessons.
+- **Example:** [http://localhost:3000/courses/noob-solidity](http://localhost:3000/courses/noob-solidity)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Lesson Page
+- **Route:** `/courses/[slug]/[chapter]/[lesson]`
+- **Description:** Displays a lesson with video and lesson description.  
+  Navigate here by clicking a lesson inside the single course page.
+- **Example:** [http://localhost:3000/courses/noob-solidity/simple-storage/simple-storage-introduction](http://localhost:3000/courses/noob-solidity/simple-storage/simple-storage-introduction)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Lesson Features
+- Click the checkbox to mark a lesson as complete or incomplete.  
+  - **Checked:** Shows a notification that `<lesson.name>` is complete.
+  - **Unchecked:** Shows a notification that `<lesson.name>` is incomplete.
+- Authentication is temporarily commented out. If the user is not authenticated, the checkbox is disabled.
