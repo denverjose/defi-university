@@ -1,0 +1,13 @@
+/* Styles go here */
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Rubik:wght@300;400;700&display=swap");
+/* globals.css */
+:root {
+  --clr-primary: #030303;
+  --clr-secondary: #1e1e1e;
+  --clr-text-light: #f2ecff;
+  --clr-text-dark: #030303;
+  --clr-button-bg-1: #3586c6;
+  --clr-button-bg-2: #44e6ff;
+  --clr-button-bg-3: #ff7f50;
+}
+
