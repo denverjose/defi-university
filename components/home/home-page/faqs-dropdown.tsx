@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 import {
   Typography,
   Accordion,
@@ -16,8 +15,9 @@ export default function FaqsDropdown() {
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-      setExpanded(newExpanded ? panel : false); // Set the panel that is expanded
+      setExpanded(newExpanded ? panel : false);
     };
+
   return (
     <>
       {faqs.map((faq, index) => (
@@ -27,14 +27,9 @@ export default function FaqsDropdown() {
           onChange={handleChange(`panel${index}`)}
           sx={{
             boxShadow: "none",
-            borderRadius: 4,
-            "&.Mui-expanded": {
-              backgroundColor: "background.paper",
-              margin: 0,
-            },
-            "&::before": {
-              content: "none", // Remove the content of the ::before pseudo-element
-            },
+            borderRadius: 3,
+            mb: 2,
+            "&::before": { content: "none" }, // remove default MUI divider
           }}
         >
           <AccordionSummary
@@ -42,33 +37,33 @@ export default function FaqsDropdown() {
               expanded === `panel${index}` ? (
                 <RemoveIcon
                   sx={{
-                    border: "1px solid ",
-                    borderRadius: 100,
+                    border: "1px solid",
+                    borderColor: "divider",
+                    borderRadius: "50%",
+                    fontSize: 20,
                   }}
                 />
               ) : (
                 <AddIcon
                   sx={{
-                    border: "1px solid ",
-                    borderRadius: 100,
+                    border: "1px solid",
+                    borderColor: "divider",
+                    borderRadius: "50%",
+                    fontSize: 20,
                   }}
                 />
               )
             }
             sx={{
-              fontWeight: "bold",
-              backgroundColor: "background.default",
-              borderRadius: 4,
-              p: 4,
+              backgroundColor:
+                expanded === `panel${index}`
+                  ? "background.paper"
+                  : "background.default",
+              borderRadius: 3,
               px: { xs: 2, sm: 4 },
-              "&.Mui-expanded": {
-                backgroundColor: "background.paper",
-                margin: 0,
-                my: 0,
-              },
+              py: 2,
               "& .MuiAccordionSummary-content": {
                 my: 0,
-                backgroundColor: "background.paper",
               },
             }}
           >
@@ -76,7 +71,7 @@ export default function FaqsDropdown() {
               {faq.question}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails sx={{ p: 4, pt: 0, px: { xs: 2, sm: 4 } }}>
+          <AccordionDetails sx={{ px: { xs: 2, sm: 4 }, pt: 2, pb: 3 }}>
             <Typography variant="subtitle1" color="text.secondary">
               {faq.answer}
             </Typography>

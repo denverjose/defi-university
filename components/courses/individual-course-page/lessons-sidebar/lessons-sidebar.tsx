@@ -10,11 +10,11 @@ import { CourseType } from "@/lib/types/data-type";
 import ChapterProgress from "./chapter-progress";
 import ChapterTitle from "./chapter-title";
 import LessonCheckbox from "./checkbox";
-import { isServerAuthenticated } from "@/lib/auth/isServerAuth";
+// import { isServerAuthenticated } from "@/lib/auth/isServerAuth";
 import AccordionDetailsWrapper from "./accordion-details-wrapper";
 
 export async function LessonSidebar({ course }: { course: CourseType }) {
-  const isAuth = await isServerAuthenticated();
+  // const isAuth = await isServerAuthenticated();
 
   return (
     <Box sx={{ minWidth: { xs: 0, lg: "363px" } }}>
@@ -79,7 +79,7 @@ export async function LessonSidebar({ course }: { course: CourseType }) {
                     <LessonCheckbox
                       chapterId={chapter.id}
                       chapterTitle={chapter.title}
-                      isAuth={isAuth}
+                      // isAuth={isAuth}
                     />
                     {/* </fieldset> */}
                   </Box>

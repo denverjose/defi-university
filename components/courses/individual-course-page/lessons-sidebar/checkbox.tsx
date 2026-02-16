@@ -7,11 +7,11 @@ import ChapterNotifications from "@/components/courses/individual-course-page/le
 function LessonCheckbox({
   chapterId,
   chapterTitle,
-  isAuth,
+  // isAuth,
 }: {
   chapterId: string;
   chapterTitle: string;
-  isAuth: boolean;
+  // isAuth: boolean;
 }) {
   const {
     chapterNotifications,
@@ -30,7 +30,7 @@ function LessonCheckbox({
   return (
     <>
       <Checkbox
-        disabled={!isAuth}
+        // disabled={!isAuth}
         onChange={(event) =>
           handleCheckboxChange(chapterId, chapterTitle, event.target.checked)
         }
