@@ -20,7 +20,15 @@ This is a Next.js + TypeScript + MUI + framer motion templated web application f
 
 ### 1. Courses Page
 - **Route:** `/courses`
-- **Description:** Lists all available courses.
+- **Description:** Lists all available courses.  
+  Courses can be filtered by level using the `level` query parameter (server-side filtering).  
+  Example: `/courses?level=Noob` will show only courses with the "Noob" level.
+- **Implementation Details:**
+  - Uses server-side fetching via `getFilteredCourses(level)` to get courses based on the selected level.
+  - `FilteredCourses` component displays the list of courses.
+  - `NextStep` component shows recommendations or next actions.
+  - Suspense fallback shows a loading message while courses are being fetched.
+
 
 ### 2. Single Course Page
 - **Route:** `/courses/[slug]`
