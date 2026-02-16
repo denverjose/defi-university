@@ -1,5 +1,6 @@
 ## Getting Started
 
+
 ## Environment Variables
 
 This project requires a `.env` file to run properly. The `.env` file contains sensitive information such as API keys and other configuration values.  
@@ -19,7 +20,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # My Course Platform
 
+# Taxpro Accelerator (Previous Version)
+
+This is a previous version of the learning platform I built while working for a US client.  
 This is a Next.js + TypeScript + MUI + framer motion templated web application for browsing and learning courses.
+
+**Live version:** [https://taxproacademy.tax](https://taxproacademy.tax)  
 
 ## Available Pages
 
