@@ -51,3 +51,6 @@ This is a Next.js + TypeScript + MUI + framer motion templated web application f
   - **Checked:** Shows a notification that `<lesson.name>` is complete.
   - **Unchecked:** Shows a notification that `<lesson.name>` is incomplete.
 - Authentication is temporarily commented out. If the user is not authenticated, the checkbox is disabled.
+
+
+This makes it clear the project is inspired by **Updraft**, while keeping all your features and `.env` instructions. 
