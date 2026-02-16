@@ -1,13 +1,18 @@
 ## Getting Started
-Make sure you run 
-`npm install`
 
-Then, run the development server:
+## Environment Variables
+
+This project requires a `.env` file to run properly. The `.env` file contains sensitive information such as API keys and other configuration values.  
+
+**Important:** The `.env` file is not included in the repository for security reasons.  
+
+If you want to run the project locally, **please contact the project owner** (or me) to provide the `.env` file.  
+
+Once you have the `.env` file, place it in the root directory of the project and run:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
