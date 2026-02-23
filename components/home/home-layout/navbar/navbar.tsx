@@ -191,6 +191,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Link from "next/link";
 import { AuthButton } from "@/components/auth/login-logout-button";
+import { courses } from "@/lib/constants/courses";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -265,34 +266,24 @@ export default function Navbar() {
                   anchorEl={anchorEl}
                   open={Boolean(anchorEl)}
                   onClose={handleMenuClose}
-                  sx={{ width: "100vw" }} // Make the dropdown full width
+                  sx={{ width: "100vw" }}
                 >
-                  <MenuItem
-                    component={Link}
-                    href="/courses/1"
-                    onClick={handleMenuClose}
-                    sx={{ width: "100vw", mx: "8px" }} // Apply full width & horizontal margin
-                  >
-                    Course 1
-                  </MenuItem>
+                  {courses.map((course) => {
+                    // Use the first level's ID for the route
+                    const firstLevelId = course.levels[0]?.id ?? course.id;
 
-                  <MenuItem
-                    component={Link}
-                    href="/courses/2"
-                    onClick={handleMenuClose}
-                    sx={{ width: "100vw", mx: "8px" }} // Apply full width & horizontal margin
-                  >
-                    Course 2
-                  </MenuItem>
-
-                  <MenuItem
-                    component={Link}
-                    href="/courses/3"
-                    onClick={handleMenuClose}
-                    sx={{ width: "100vw", mx: "8px" }} // Apply full width & horizontal margin
-                  >
-                    Course 3
-                  </MenuItem>
+                    return (
+                      <MenuItem
+                        key={course.id}
+                        component={Link}
+                        href={`/courses/${firstLevelId}`}
+                        onClick={handleMenuClose}
+                        sx={{ width: "100vw", mx: "8px" }}
+                      >
+                        {course.name}
+                      </MenuItem>
+                    );
+                  })}
                 </Menu>
               </Box>
             </Box>
@@ -433,15 +424,15 @@ export default function Navbar() {
               >
                 <ListItemText primary="Courses" />
               </ListItem>
-                <ListItem
-                  onClick={toggleMobileMenu}
-                  sx={{
-                    textAlign: { xs: "left", md: "center" },
-                    color: "text.secondary",
-                  }}
-                >
-                  <AuthButton />
-                </ListItem>
+              <ListItem
+                onClick={toggleMobileMenu}
+                sx={{
+                  textAlign: { xs: "left", md: "center" },
+                  color: "text.secondary",
+                }}
+              >
+                <AuthButton />
+              </ListItem>
             </List>
           </Box>
         </Drawer>

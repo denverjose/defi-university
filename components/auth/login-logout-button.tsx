@@ -1,10 +1,10 @@
-import { useSession } from "next-auth/react";
-import SignOut from "@/components/auth/sign-out";
+// import { useSession } from "next-auth/react";
+// import SignOut from "@/components/auth/sign-out";
 import { Box, CircularProgress, Button } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 export function AuthButton() {
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
   const router = useRouter();
 
   if (status === "loading") {
@@ -14,19 +14,31 @@ export function AuthButton() {
       </Box>
     );
   }
-  return session?.user ? (
-    <SignOut />
-  ) : (
-    <Button
-      onClick={() => router.push("/login")}
-      sx={{
-        color: "white",
-        fontWeight: 700,
-        paddingY: 1,
-      }}
-      variant="contained"
-    >
-      Sign In
-    </Button>
-  );
+  
+  <Button
+    onClick={() => router.push("/login")}
+    sx={{
+      color: "white",
+      fontWeight: 700,
+      paddingY: 1,
+    }}
+    variant="contained"
+  >
+    Sign In
+  </Button>;
+  // return session?.user ? (
+  //   <SignOut />
+  // ) : (
+  //   <Button
+  //     onClick={() => router.push("/login")}
+  //     sx={{
+  //       color: "white",
+  //       fontWeight: 700,
+  //       paddingY: 1,
+  //     }}
+  //     variant="contained"
+  //   >
+  //     Sign In
+  //   </Button>
+  // );
 }

@@ -1,4 +1,4 @@
-import SignIn from "@/components/auth/social-media-login";
+// import SignIn from "@/components/auth/social-media-login";
 import {
   Box,
   Avatar,
@@ -7,28 +7,29 @@ import {
   Button,
   Divider,
 } from "@mui/material";
-import { auth } from "@/lib/auth";
-import { redirect } from "next/navigation";
+// import { auth } from "@/lib/auth";
+// import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { loginMetadata } from "@/lib/metadata";
 import Link from "next/link";
 
 export const metadata: Metadata = loginMetadata;
 
-export default async function page({
-  searchParams: searchParamsPromise,
-}: {
-  searchParams?: Promise<{ callbackUrl?: string }>;
-}) {
-  const session = await auth();
-  const searchParams = await searchParamsPromise; // Await the Promise
+export default async function page() {
+  // {
+  //   searchParams: searchParamsPromise,
+  // }: {
+  //   searchParams?: Promise<{ callbackUrl?: string }>;
+  // },
+  // const session = await auth();
+  // const searchParams = await searchParamsPromise; // Await the Promise
 
-  if (session) {
-    redirect(searchParams?.callbackUrl || "/courses");
-  } else {
-    console.log(searchParams?.callbackUrl);
-    console.log("Not Authenticated");
-  }
+  // if (session) {
+  //   redirect(searchParams?.callbackUrl || "/courses");
+  // } else {
+  //   console.log(searchParams?.callbackUrl);
+  //   console.log("Not Authenticated");
+  // }
 
   return (
     <Box
@@ -91,7 +92,7 @@ export default async function page({
             </Button>
             {/* <SignIn /> */}
             <Divider sx={{ color: "text.secondary" }}>OR</Divider>
-            <SignIn />
+            {/* <SignIn /> */}
           </Box>
 
           <Typography

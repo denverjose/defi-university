@@ -16,10 +16,10 @@ import VideoLibraryOutlinedIcon from "@mui/icons-material/VideoLibraryOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 
 export const LessonToggle = ({
-  isAuth,
+  // isAuth,
   chapter,
 }: {
-  isAuth: boolean;
+  // isAuth: boolean;
   chapter: ChapterType;
 }) => {
   const [lessonType, setLessonType] = useState<"video" | "written">("video");
@@ -63,7 +63,7 @@ export const LessonToggle = ({
 
       {lessonType === "video" ? (
         <VideoLesson
-          isAuth={isAuth}
+          // isAuth={isAuth}
           videoUrl={chapter.videoUrl}
           videoTitle={chapter.title}
         />

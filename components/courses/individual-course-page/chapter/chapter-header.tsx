@@ -2,10 +2,10 @@ import { ChapterType } from "@/lib/types/data-type";
 import { Box, Typography } from "@mui/material";
 import { LessonToggle } from "./lesson-toggle-view";
 import { NavigationButtons } from "./navigation-button";
-import { isServerAuthenticated } from "@/lib/auth/isServerAuth";
+// import { isServerAuthenticated } from "@/lib/auth/isServerAuth";
 
 export const ChapterHeader = async ({ chapter }: { chapter: ChapterType }) => {
-  const isAuth = await isServerAuthenticated();
+  // const isAuth = await isServerAuthenticated();
 
   return (
     <Box
@@ -17,7 +17,9 @@ export const ChapterHeader = async ({ chapter }: { chapter: ChapterType }) => {
         border: "1px solid rgb(234, 236, 240)",
       }}
     >
-      <LessonToggle isAuth={isAuth} chapter={chapter} />
+      {/* <LessonToggle isAuth={isAuth} chapter={chapter} /> */}
+      <LessonToggle  chapter={chapter} />
+
       <Box sx={{ marginTop: 4 }}>
         <Typography variant="h5">{chapter.title}</Typography>
         <Typography variant="body2" sx={{ marginTop: 1 }}>

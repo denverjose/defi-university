@@ -3,12 +3,12 @@ import { Card, CardMedia } from "@mui/material";
 export default function VideoLesson({
   videoUrl,
   videoTitle,
-  isAuth,
+  // isAuth,
 }: // lessonType,
 {
   videoUrl: string;
   videoTitle: string;
-  isAuth: boolean;
+  // isAuth: boolean;
   // lessonType: string;
 }) {
   return (
@@ -29,7 +29,7 @@ export default function VideoLesson({
           width: "100%",
           height: "100%",
           border: "none",
-          pointerEvents: `${isAuth ? "auto" : "none"}`,
+          // pointerEvents: `${isAuth ? "auto" : "none"}`,
         }}
         src={videoUrl}
         title={videoTitle}

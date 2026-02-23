@@ -1,6 +1,6 @@
 import { Box, Avatar, Typography } from "@mui/material";
-import { auth } from "@/lib/auth";
-import { redirect } from "next/navigation";
+// import { auth } from "@/lib/auth";
+// import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { registerMetadata } from "@/lib/metadata";
 import Link from "next/link";
@@ -9,11 +9,11 @@ import RegisterForm from "@/components/auth/sign-up-form";
 export const metadata: Metadata = registerMetadata;
 
 export default async function page() {
-  const session = await auth();
+  // const session = await auth();
 
-  if (session) {
-    redirect("/authenticated");
-  }
+  // if (session) {
+  //   redirect("/authenticated");
+  // }
 
   return (
     <Box
